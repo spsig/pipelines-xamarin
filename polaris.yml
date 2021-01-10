@@ -7,8 +7,6 @@ project:
     date: ${scm.git.commit.date}
 capture:
   build:
-    cleanCommands:
-    - shell: [msbuild, AwesomeApp.sln, '/t:Clean']
     buildCommands:
     - shell: [msbuild, AwesomeApp.sln, '/t:Build']
   fileSystem:
