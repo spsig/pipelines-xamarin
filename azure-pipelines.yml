@@ -23,7 +23,7 @@ jobs:
   - task: SynopsysPolaris@1
     inputs:
      polarisService: 'Demo'
-     polarisCommand: 'analyze -w --coverity-ignore-failure'
+     polarisCommand: 'analyze -w --coverity-ignore-capture-failure'
 
   - task: XamarinAndroid@1
     inputs:
