@@ -20,12 +20,16 @@ jobs:
     inputs:
       restoreSolution: '**/*.sln'
 
+  - task: SynopsysPolaris@1
+    inputs:
+     polarisService: 'Demo'
+     polarisCommand: 'analyze -w --coverity-ignore-failure'
+
   - task: XamarinAndroid@1
     inputs:
-      projectFile: '**/*droid*.csproj'
-      outputDirectory: '$(outputDirectory)'
-      configuration: '$(buildConfiguration)'
-      msbuildVersionOption: '16.0'
+     projectFile: '**/*droid*.csproj'
+     outputDirectory: '$(outputDirectory)'
+     configuration: '$(buildConfiguration)'
 
   - task: AndroidSigning@3
     inputs:
