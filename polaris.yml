@@ -1,14 +1,16 @@
 version: "1"
 project:
   name: ${scm.git.repo}
-  branch: ${scm.git.branch}
+  branch: "capture"
   revision:
     name: ${scm.git.commit}
     date: ${scm.git.commit.date}
 capture:
-  build:
-    buildCommands:
-    - shell: [msbuild, AwesomeApp.sln, '/t:Build']
+  coverity:
+    buildless:
+      project:
+          languages:
+            - "cs"
   fileSystem:
     ears:
       extensions: [ear]
@@ -38,5 +40,5 @@ analyze:
   mode: central
 install:
   coverity:
-    version: default
+    version: 2021.03
 serverUrl: https://demo.polaris.synopsys.com
